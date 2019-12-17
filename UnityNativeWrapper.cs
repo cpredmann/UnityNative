@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using System;
 
@@ -17,4 +17,7 @@ public class UnityNativeWrapper
 
     [DllImport("UnityNativeWrapper", CallingConvention =CallingConvention.Cdecl)]
     public static extern void DestroyUnityNative(IntPtr unityNative);
+
+    [DllImport("UnityNativeWrapper", CallingConvention =CallingConvention.Cdecl)]
+    public static extern void GetPoints(IntPtr unityNative, IntPtr pointData);
 }

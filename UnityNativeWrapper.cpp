@@ -24,4 +24,8 @@ extern "C" {
         delete reinterpret_cast<UnityNativeBasic*>(unityNative);
     }
 
+    void EXPORT_API GetPoints(intptr_t unityNative, Vector3 *data) {
+        auto pts = reinterpret_cast<UnityNativeBasic*>(unityNative)->getPoints();
+        std::copy(pts, pts+(GetPointCount(unityNative) * sizeof(Vector3)), data);
+    }
 }
